@@ -19,13 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::get('/hello', function() {
-    return 'Hello Laravel';
-});
+Auth::routes();
 
-// my => profile
+Route::redirect('/home', '/')->name('home');
 
-Route::redirect('/my', '/profile');
-
-Route::get('/profile', 'UserController@index');
-Route::get('/profile/{id}', 'UserController@show');
+Route::get('/admin', 'AdminController@halamanawal')->middleware('auth');
+Route::get('/admin/create', 'AdminController@create')->middleware('auth');
+Route::post('/admin/create-post', 'AdminController@store')->middleware('auth');
