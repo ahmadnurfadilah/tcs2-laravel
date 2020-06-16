@@ -14,8 +14,7 @@ class AddPhoneColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->renameColumn('email', 'alamat_email');
-            $table->string('phone')->after('password');
+            $table->string('phone')->nullable()->after('password');
         });
     }
 

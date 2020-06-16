@@ -26,3 +26,8 @@ Route::redirect('/home', '/')->name('home');
 Route::get('/admin', 'AdminController@halamanawal')->middleware('auth');
 Route::get('/admin/create', 'AdminController@create')->middleware('auth');
 Route::post('/admin/create-post', 'AdminController@store')->middleware('auth');
+
+Route::get('/admin/edit/{id}', 'AdminController@edit')->middleware('auth');
+Route::post('/admin/edit/{id}', 'AdminController@update')->middleware('auth');
+
+Route::post('/admin/delete/{id}', 'AdminController@delete')->middleware('auth');

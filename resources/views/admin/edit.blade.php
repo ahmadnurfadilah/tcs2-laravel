@@ -16,16 +16,16 @@
                             </div>
                         @endif
 
-                        <form action="/admin/create-post" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/edit/{{ $blog->id }}" method="POST">
                             @csrf
                             <label for="title">Title</label>
-                            <input type="text" name="title" class="form-control" value="{{ old('title') }}">
+                            <input type="text" name="title" class="form-control" value="{{ $blog->title }}">
 
                             <label for="content">Content</label>
-                            <textarea name="content" id="content" class="form-control" rows="5">{{ old('content') }}</textarea>
+                            <textarea name="content" id="content" class="form-control" rows="5">{{ $blog->content }}</textarea>
 
                             <label for="image">Image</label>
-                            <input type="file" name="image" accept=".png" class="form-control">
+                            <input type="file" name="image" class="form-control">
 
                             <hr>
 
