@@ -21,6 +21,13 @@
                             <label for="title">Title</label>
                             <input type="text" name="title" class="form-control" value="{{ $blog->title }}">
 
+                            <label for="category">Category</label>
+                            <select name="category" class="form-control">
+                                @foreach($categories as $category)
+                                    <option @if($category->id == $blog->category_id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+
                             <label for="content">Content</label>
                             <textarea name="content" id="content" class="form-control" rows="5">{{ $blog->content }}</textarea>
 

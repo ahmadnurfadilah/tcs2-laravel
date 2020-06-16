@@ -1,0 +1,1 @@
+Hi, Telah terpublish tulisan baru dengan judul: {{ $title }}
